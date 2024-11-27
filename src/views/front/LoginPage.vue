@@ -29,14 +29,9 @@
 </template>
 
 <script>
-<<<<<<< HEAD
 // import axios from 'axios';
 import { login } from '@/plugins/login';
 console.log("test")
-=======
-import axios from 'axios';
-
->>>>>>> 5324c5bdeb5609711c523a945af8f108b5b706c3
 export default {
   data() {
     return {
@@ -51,19 +46,11 @@ export default {
         Password: this.password
       };
 
-<<<<<<< HEAD
       login(userCredentials)
         .then(response => {
           const data = response.data;
           if (response.coreResponseCode === 1) {
             localStorage.setItem('token', data);
-=======
-      axios.post('https://localhost:7092/api/UserService/login', userCredentials)
-        .then(response => {
-          const data = response.data;
-          if (data.responseCode === 1) {
-            localStorage.setItem('token', data.data);
->>>>>>> 5324c5bdeb5609711c523a945af8f108b5b706c3
             localStorage.setItem('userName', userCredentials.UserName);
             
             this.$router.push('/admin');
